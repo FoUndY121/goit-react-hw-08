@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setFilter } from "../../redux/filters/filtersSlice.js";
-
+import s from './SearchBar.module.css';
 function SearchBar() {
     const dispatch = useDispatch();
 
@@ -12,8 +12,9 @@ function SearchBar() {
     };
 
     return (
-        <div>
+        <div className={s.searchContainer}>
             <input
+                className={s.searchInput}
                 type="text"
                 name="search"
                 value={filter}

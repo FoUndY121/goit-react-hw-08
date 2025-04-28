@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsOps.js"; // новий імпорт
-
+import { addContact } from "../../redux/contactsOps.js";
+import s from './FormComponent.module.css';
 function FormComponent() {
     const initialValues = {
         name: '',
@@ -17,12 +17,12 @@ function FormComponent() {
     };
 
     return (
-        <div>
-            <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-                <Form>
-                    <Field name="name" placeholder="Name" />
-                    <Field name="number" placeholder="Number" />
-                    <button type="submit">Add Contact</button>
+        <div className={s.formContainer}>
+            <Formik initialValues={initialValues} onSubmit={handleSubmit} >
+                <Form className={s.form}>
+                    <Field name="name" placeholder="Name"  className={s.input}/>
+                    <Field name="number" placeholder="Number" className={s.input} />
+                    <button type="submit" className={s.addButton}>Add Contact</button>
                 </Form>
             </Formik>
         </div>

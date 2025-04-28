@@ -1,0 +1,18 @@
+.pageContainer {
+    padding: 24px;
+    background-color: #fafafa;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin: 16px 0;
+}

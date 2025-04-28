@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/auth/operations';
-
+import s from './LoginForm.module.css';
 function LoginForm() {
     const dispatch = useDispatch();
 
@@ -13,10 +13,10 @@ function LoginForm() {
                 actions.resetForm();
             }}
         >
-            <Form>
-                <Field name="email" type="email" placeholder="Email" />
-                <Field name="password" type="password" placeholder="Password" />
-                <button type="submit">Login</button>
+            <Form className={s.form}>
+                <Field name="email" type="email" placeholder="Email" className={s.input}/>
+                <Field name="password" type="password" placeholder="Password" className={s.input}/>
+                <button type="submit" className={s.button}>Login</button>
             </Form>
         </Formik>
     );

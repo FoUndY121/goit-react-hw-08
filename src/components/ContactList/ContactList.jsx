@@ -5,7 +5,7 @@ import Contact from "../Contact/Contact.jsx";
 import { deleteContact } from '../../redux/contactsOps.js';
 import { selectFilteredContacts } from '../../redux/contacts/selectors.js';
 import SearchBar from "../SearchBar/SearchBar.jsx";
-
+import s from './ContactList.module.css';
 function ContactList() {
     const contacts = useSelector(selectFilteredContacts);
     const dispatch = useDispatch();
@@ -15,10 +15,10 @@ function ContactList() {
     };
 
     return (
-        <div>
+        <div className={s.listContainer}>
             {/*<FormComponent />*/}
             {/*<SearchBar />*/}
-            <ul>
+            <ul className={s.contactList}>
                 {contacts.map(contact => (
                     <Contact
                         key={contact.id}
